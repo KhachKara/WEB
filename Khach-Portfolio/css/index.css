@@ -1,0 +1,275 @@
+.html
+{
+	background-color: #7F7F7F;
+}
+
+#page
+{
+	z-index: 1;
+	width: 960px;
+	min-height: 3000px;
+	background-image: none;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #000000;
+	background-color: #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#page_position_content
+{
+	margin-bottom: 950px;
+}
+
+#u96
+{
+	z-index: 10;
+	width: 960px;
+	border-style: none;
+	border-color: transparent;
+	background-color: #BEBEBE;
+	padding-bottom: 1px;
+	position: relative;
+}
+
+#u98-4
+{
+	z-index: 11;
+	width: 924px;
+	min-height: 83px;
+	line-height: 36px;
+	color: #FFFFFF;
+	font-size: 30px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 14px;
+	left: 20px;
+}
+
+#pu69
+{
+	width: 0.01px;
+	margin-left: 20px;
+	position: relative;
+}
+
+#u69
+{
+	z-index: 2;
+	width: 920px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u75
+{
+	z-index: 4;
+	width: 211px;
+	-pie-box-shadow: none;
+	-moz-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 6px 6px 8px -1px rgba(0, 0, 0, 0.5);
+	box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+	background-color: transparent;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-khtml-border-radius: 100px;
+	border-radius: 100px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 324px;
+	left: 7px;
+}
+
+#u91-4
+{
+	z-index: 6;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 393px;
+	left: 238px;
+}
+
+#u114
+{
+	z-index: 15;
+	width: 775px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 500px;
+	left: 105px;
+}
+
+#u99-5
+{
+	z-index: 16;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	left: 153px;
+}
+
+#u104-5
+{
+	z-index: 21;
+	width: 766px;
+	min-height: 198px;
+	text-align: right;
+	line-height: 36px;
+	font-size: 30px;
+	font-family: Times, Times New Roman, Georgia, serif;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 122px;
+}
+
+#pu109-7
+{
+	width: 0.01px;
+	margin-left: 20px;
+	margin-top: 61px;
+	position: relative;
+}
+
+#u109-7
+{
+	z-index: 26;
+	width: 691px;
+	min-height: 231px;
+	text-align: right;
+	line-height: 36px;
+	font-size: 30px;
+	font-family: Times, Times New Roman, Georgia, serif;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 402px;
+	left: 229px;
+}
+
+#u109-3
+{
+	text-decoration: underline;
+	color: #000000;
+	line-height: 36px;
+}
+
+#u107-5
+{
+	z-index: 33;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 280px;
+	left: 404px;
+}
+
+#u113
+{
+	z-index: 51;
+	width: 692px;
+	position: relative;
+	margin-right: -10000px;
+	left: -1px;
+}
+
+#u105-5
+{
+	z-index: 52;
+	width: 691px;
+	min-height: 231px;
+	text-align: left;
+	line-height: 36px;
+	font-size: 30px;
+	font-family: Times, Times New Roman, Georgia, serif;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 121px;
+	left: 1px;
+}
+
+#u104-2,#u105-2
+{
+	line-height: 36px;
+}
+
+#u103-5
+{
+	z-index: 57;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u117
+{
+	z-index: 38;
+	width: 746px;
+	margin-left: 19px;
+	margin-top: 32px;
+	position: relative;
+}
+
+#u108-5
+{
+	z-index: 39;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u116-7
+{
+	z-index: 44;
+	width: 745px;
+	min-height: 199px;
+	text-align: left;
+	line-height: 36px;
+	font-size: 30px;
+	font-family: Times, Times New Roman, Georgia, serif;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 122px;
+	left: 1px;
+}
+
+#u104-3,#u109-5,#u105-3,#u116-3
+{
+	line-height: 0px;/* 0 for mixed font sized paras; applied on spans instead */
+}
+
+#u104,#u109,#u105,#u116
+{
+	font-size: 36px;
+	font-weight: bold;
+	font-style: italic;
+	line-height: 43px;
+}
+
+#u109-2,#u109-4,#u116-2
+{
+	color: #000000;
+	line-height: 36px;
+}
+
+#u116-4
+{
+	color: #000000;
+}
+
+body
+{
+	padding-top: 35px;
+	padding-bottom: 36px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+

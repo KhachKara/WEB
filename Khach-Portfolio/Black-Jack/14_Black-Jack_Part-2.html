@@ -1,0 +1,188 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	var arrKarti = 			['2','3','4','5','6','7','8','9','10','J','Q','K','A'];			//Эталон Карты
+	var arrKartiNumber = 	['2','3','4','5','6','7','8','9','10','10','10','10','11'];		
+	var Deposit;							// Депозит 
+	var	Stavka ;							// Стоимость одной ставки
+	var Viigrish = 0						// Выиигрыш
+	var Proigrish = 0						// Проигрыш
+	var Eshe = '0';							//Условия выхода из игры
+	var KolParti=0;							//количество сыгранных партий
+
+
+	alert("УРОК 12 ФУНКЦИИ" + "\n" + "\n" + "Игра BLACK JACK" + "\n" + "\n" + "Достоинства карт." + "\n" + "2 - 2" + "\n" + "3 - 3" + "\n" + "4 - 4" + "\n" + "5 - 5" + "\n" + "6 - 6" + "\n" + "7 - 7" + "\n" + "8 - 8" + "\n" + "9 - 9" + "\n" + "10 - 10" + "\n" + "J - 10" + "\n" + "Q - 10" + "\n" + "K - 10" + "\n" + "A - 1,11" + "\n" + "\n" + "Правила игры! Нужно набрать максимальное количество очков, до 21. Перебор считается проигрышом.");
+
+	Deposit = prompt("Сумма депозита: ");
+	Stavka = prompt("Сумма ставки: ");
+
+	//функция для генерации случайных чисел в заданном диапазоне min, max
+	function SluchaynoeChislo(min, max)
+	{
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	//функция для генерации случайных карт
+	function RazdachaKart()
+	{
+		return (arrKarti[SluchaynoeChislo(0,arrKarti.length-1)]);
+	}
+
+	// функция для подсчета суммы карт
+	function SummNumber(arrSomebodyKarti)
+	{
+		var Summa = 0;
+		var kolvoTuz = 0;	// кол-во Тузов
+		for(var i = 0; i < arrSomebodyKarti.length; i++)
+		{
+			if(arrSomebodyKarti[i] == 'J' || arrSomebodyKarti[i] == 'Q' || arrSomebodyKarti[i] == 'K')
+				Summa += 10;
+			else if(arrSomebodyKarti[i] == 'A')
+			{
+				Summa += 11;
+				kolvoTuz++;
+			}
+			else
+				Summa += parseInt(arrSomebodyKarti[i]);
+		}
+		// ▲▲▲▲ Выше все тузы считаются за 11 очков
+		// ▼▼▼▼ Ниже уже переводим необходимое кол-во тузов в одноочковые
+		if (Summa > 21 && kolvoTuz > 0)	
+		{
+			for(var i = 0; i < kolvoTuz; i++)
+			{
+				Summa -= 10;
+				if(Summa <= 21)
+					return Summa;
+			}
+		}
+		return Summa;
+	}
+	// функция для подсчета суммы карт, если тузы дают одно очко
+	function MinSummNumber(arrSomebodyKarti)
+	{
+		var Summa = 0;
+		var kolvoTuz = 0;	// кол-во Тузов
+		for(var i = 0; i < arrSomebodyKarti.length; i++)
+		{
+			if(arrSomebodyKarti[i] == 'J' || arrSomebodyKarti[i] == 'Q' || arrSomebodyKarti[i] == 'K')
+				Summa += 10;
+			else if(arrSomebodyKarti[i] == 'A')
+			{
+				Summa += 1;
+				kolvoTuz++;
+			}
+			else
+				Summa += parseInt(arrSomebodyKarti[i]);
+		}
+		return Summa;
+	}
+	// функция подсчета вероятности проигрыша
+	function VeroyatnostViigrisha (arrSomebodyKarti)		// надо подумать как сделать что бы правильно считал
+	{
+		var SummNumber = MinSummNumber(arrSomebodyKarti);
+		var Raznitsa = 0;
+		var stop;
+		Raznitsa = 21 - SummNumber;
+		if(Raznitsa >= 11)
+			return 100;
+		if(Raznitsa < 1)
+			return 0;
+		if (Raznitsa == 1)
+			stop = 1
+		else
+		{
+			for(var i = 0; i < arrKartiNumber.length; i++)
+			{
+				if(Raznitsa == arrKartiNumber[i])
+				{
+					stop = i+2;	 // i+1 - переводим в кол-во выигрышных исходов. Еще +1 - прибавляем возможность что туз может быть == 1.
+					break;
+				}
+			}
+		}
+		return (100 - ((13 - stop)/13*100)).toFixed(2);
+	}  
+
+	//-----------------------------------------------------------------------------------
+	//Основной цикл (тело игры в Black Jack)
+	while (1){
+		if(Deposit < Stavka)
+			break;
+
+		//спрашывает о завершении игры после первой игры
+		if(KolParti == 0){
+		
+		}else if(prompt("Ваш депозит: " + Deposit + "\n" + "\n" + "Хотите завершить игру?" + "\n" + "Вводите '0' в поле с низу.") == '0')
+		 	break;
+		Deposit -= Stavka;	//В начале игры снимается с депозита и проверяется условие есть ли средства
+										//что-бы продолжить игру игру
+
+		var Stop = '0';							//переменная для выхода из цикла
+		var SummaIgrok = 0;						//Сумма карт игрока
+		var SummaDealer = 0;					//Сумма карт дилера
+		var arrIgrok = [];						// Карты игрока	
+		var arrDealer = [];						// Карты дилера
+
+		arrIgrok.push(RazdachaKart());
+		arrIgrok.push(RazdachaKart());	
+		SummaIgrok = SummNumber(arrIgrok);
+		//цикл где игрок решает нужно ли ему брать добавочную карту или нет
+		do
+		{	
+			Eshe = prompt("Ваш депозит: " + Deposit + "\n" + "Ставка: " + Stavka + "\n" + "\n" + "Ваши карты: " + arrIgrok + "\n" + "\n" + " Сумма карт: " + SummaIgrok + "\n" + "\n" + "Желаете еще карту?" + "\n" + "\n" + "Если да вводите '0' , если нет 'ENTER'" + "\n" + "\n" + "ВНИМАННИЕ!!!" + "\n" + "\n" + "Вероятность выигрыша, если взять еще одну карту, будет равна: " + VeroyatnostViigrisha(arrIgrok) + "%");	
+			if(Eshe == '0')
+			{
+				arrIgrok.push(RazdachaKart());
+				SummaIgrok = SummNumber(arrIgrok);
+				if(SummNumber(arrIgrok) == 21){
+					alert("!!! BLACK JACK !!!");
+					break;
+				}			
+				if(SummaIgrok > 21)
+				{
+					alert("Ваш депозит: " + Deposit + "\n" + "\n" + "УПС!" + "\n" + "ПЕРЕБОР!" + "\n" + "Добавленная карта: " + arrIgrok[arrIgrok.length-1] + "\n" + "\n" + "Ваши карты: " + arrIgrok + "\n" + "\n" + "Вы проиграли!" + "\n" + "Сумма: " + SummaIgrok);
+					break;
+				}
+				else
+					alert("Ваш депозит: " + Deposit + "\n" + "\n" + "Ваши карты: " + arrIgrok + "\n" + "Сумма: " + SummaIgrok);
+			}
+		}while(Eshe == '0')
+		if(SummaIgrok > 21)
+			continue;
+		//---------------------- Диллерская Часть -------------------------------------- 
+		
+		//выдача двух карт диллеру на начало игры
+		arrDealer.push(RazdachaKart());
+		arrDealer.push(RazdachaKart());
+		
+		//считает сумму достоинств выпавшых карт
+		SummaDealer = SummNumber(arrDealer);
+			
+		while (SummaDealer < SummaIgrok)
+		{
+			arrDealer.push(RazdachaKart());
+			SummaDealer = SummNumber(arrDealer);
+		}
+		if(SummaDealer == SummaIgrok && VeroyatnostViigrisha(arrDealer) > 50)
+		{
+			arrDealer.push(RazdachaKart());
+			SummaDealer = SummNumber(arrDealer);
+		}
+		alert("Ваш депозит: " + Deposit + "\n" + "\n" + "Ваши карты: " + arrIgrok + "\n" + SummaIgrok + "\n" + "\n" + "Карты диллера: " + arrDealer  + "\n" + SummaDealer);		
+		// случаи при исходах игры
+		if(SummaDealer == SummaIgrok)
+		{
+			Deposit = Deposit + parseInt(Stavka);	//по сколку в начале игры был снят депозит, при ничье его надо вернуть
+			alert("Ваш депозит: " + Deposit + "\n" + "\n" + "НИЧЬЯ!");
+		} else if(SummaDealer > SummaIgrok && SummaDealer <= 21)
+			alert("Ваш депозит: " + Deposit + "\n" + "\n" + "ВЫ ПРОИГРАЛИ!");
+		else
+		{
+			Deposit += 2*Stavka;
+			alert("Ваш депозит: " + Deposit + "\n" + "\n" + "ВЫ ВЫИГРАЛИ!");
+		};
+		
+		KolParti++;
+	}
+	alert("Вы истратили весь депозит. Игра окончена. Повезет в другой раз!" + "\n" + "\n" + "СПАСИБО ЗА ИГРУ!");
+</script>
