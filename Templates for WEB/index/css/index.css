@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font-size: 1em;
+}
+
+.container {
+  width: 80%;
+  height: 87px;
+  margin: -6px auto 0;
+}
+
+.element {
+  float: left;
+  width: 24.5833333333%;
+  height: 30px;
+  margin: 46px 0 0 2.60417%;
+  background-color: rgba(255, 0, 0,0.1);
+}

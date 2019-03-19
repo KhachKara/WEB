@@ -1,0 +1,122 @@
+.Rectangle_1{
+    width: 700px;
+    height: 5px; 
+    margin-top: 100px;
+    background-color: red;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+.Rectangle_2{
+    width: 700px;
+    height: 5px;    
+    margin-top: 5px;
+    background-color: orange;
+    margin-top: 5px;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+
+.Rectangle_3{
+    width: auto;
+    margin-left: 360px;
+    height: 5px; 
+    margin-top: 100px;
+    background-color: red;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+.Rectangle_4{
+    width: auto;
+    margin-left: 360px;
+    height: 5px;    
+    margin-top: 5px;
+    background-color: orange;
+    margin-top: 5px;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+
+.Rectangle_5{
+    width: 600px;
+    height: 5px; 
+    margin-top: 100px;
+    background-color: red;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+.Rectangle_6{
+    width: 600px;
+    height: 5px;    
+    margin-top: 5px;
+    background-color: orange;
+    margin-top: 5px;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+
+.Rectangle_7{
+    width: auto;
+    margin-left: 430px;
+    height: 5px; 
+    margin-top: 100px;
+    background-color: red;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+.Rectangle_8{
+    width: auto;
+    margin-left: 430px;
+    height: 5px;    
+    margin-top: 5px;
+    background-color: orange;
+    margin-top: 5px;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+
+.Rectangle_9{
+    width: 140px;
+    height: 5px; 
+    margin-top: 100px;
+    background-color: red;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+.Rectangle_10{
+    width: 140px;
+    height: 5px;    
+    margin-top: 5px;
+    background-color: orange;
+    margin-top: 5px;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+
+.Rectangle_11{
+    width: auto;
+    margin-left: 600px;
+    height: 5px; 
+    margin-top: 100px;
+    background-color: red;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+.Rectangle_12{
+    width: auto;
+    margin-left: 600px;
+    height: 5px;    
+    margin-top: 5px;
+    background-color: orange;
+    margin-top: 5px;
+    box-shadow: 3px 3px 4px #cccccc;
+
+}
+
+tr:hover {
+    background-color: #fcf8e3;
+}
+
+.portfolio-image{
+    padding-top:30px;
+    margin-bottom: -50px; 
+}

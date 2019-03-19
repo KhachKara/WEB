@@ -1,0 +1,357 @@
+@font-face {
+	font-family: RobotoRegular;
+	src: url(fonts/roboto-regular.ttf); 
+}
+@font-face {
+	font-family: RobotoCondensed;
+	src: url(fonts/roboto-condensed.ttf); 
+}
+@font-face {
+	font-family: RobotoLight;
+	src: url(fonts/roboto-light.ttf); 
+}
+@font-face {
+	font-family: RobotoThing;
+	src: url(fonts/roboto-thin.ttf); 
+}
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                               /* Ð¾Ð±Ð½ÑƒÐ»ÑÐµÐ¼ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿Ñ‹ Ð¸ ÑƒÐ±Ð¸Ñ€Ð°ÐµÐ¼ Ð±Ð¾Ñ€Ð´ÑŽÑ€Ñ‹ */
+	vertical-align: baseline;          /* Ð¿Ñ€Ð¸Ð²Ð¾Ð´Ð¸Ð¼ Ð²ÑÐµ Ðº Ð¾Ð´Ð½Ð¾Ð¹ Ð±Ð°Ð·Ð¾Ð²Ð¾Ð¹ Ð»Ð¸Ð½Ð¸Ð¸ */
+	background: transparent;      /* Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ðµ Ð¿Ñ€Ð¾ÑÐºÐ°ÐºÐ¸Ð²Ð°Ð»Ð¸ Ð»ÐµÐ²Ñ‹Ðµ Ñ„Ð¾Ð½Ñ‹, ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð½Ñ‹Ðµ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ */
+	font-size: 100%;                     /* Ñ€Ð°Ð·Ð¼ÐµÑ€ ÑˆÑ€Ð¸Ñ„Ñ‚Ð° Ð²ÑÐµÐ¼ Ð¾Ð´Ð¸Ð½Ð°ÐºÐ¾Ð²Ñ‹Ð¹ */
+}
+a {                                      	     /* ÑÑÑ‹Ð»ÐºÐ° Ð½Ðµ Ð² Ð¾Ð±Ñ‰ÐµÐ¼ ÑÐ¿Ð¸ÑÐºÐµ Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ðµ ÑÐ±Ñ€Ð°ÑÑ‹Ð²Ð°Ñ‚ÑŒ outline Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ */
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+}
+table {						/* ÑƒÑÑ‚Ñ€Ð°Ð½ÑÐµÐ¼ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿Ñ‹ Ð¼ÐµÐ¶Ð´Ñƒ ÑÑ‡ÐµÐ¹ÐºÐ°Ð¼Ð¸ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹ */
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+td, td img {
+	vertical-align: top;			/* Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÐ¼ Ð¿Ñ€Ð¸Ð²Ñ‹Ñ‡Ð½Ð¾Ðµ Ð²ÐµÑ€Ñ‚Ð¸ÐºÐ°Ð»ÑŒÐ½Ð¾Ðµ Ð²Ñ‹Ñ€Ð°Ð²Ð½Ð¸Ð²Ð°Ð½Ð¸Ðµ */
+} 
+input, select, button, textarea {
+	margin: 0; 				/* ÑƒÐ±Ð¸Ñ€Ð°ÐµÐ¼ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿Ñ‹ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ Ð´Ð»Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ñ„Ð¾Ñ€Ð¼ (Ð² Ñ‡Ð°ÑÑ‚Ð½Ð¾ÑÑ‚Ð¸ Ð´Ð»Ñ checkbox Ð¸ radio) */
+	font-size: 100%; 			/* Ð´ÐµÐ»Ð°ÐµÐ¼ Ñ€Ð°Ð·Ð¼ÐµÑ€ ÑˆÑ€Ð¸Ñ„Ñ‚Ð¾Ð² Ð²ÐµÐ·Ð´Ðµ Ð¾Ð´Ð¸Ð½Ð°ÐºÐ¾Ð²Ñ‹Ð¼ */
+	outline: none;
+}
+input[type="text"], input[type="password"], textarea {
+	padding: 0; 				/* ÑƒÐ±Ð¸Ñ€Ð°ÐµÐ¼ Ð²Ð½ÑƒÑ‚Ñ€ÐµÐ½Ð½Ð¸Ðµ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿Ñ‹ Ð´Ð»Ñ Ñ‚ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ñ… Ð¿Ð¾Ð»ÐµÐ¹ */
+}
+input[type="checkbox"] { 		/* Ð²ÐµÑ€Ñ‚Ð¸ÐºÐ°Ð»ÑŒÐ½Ð¾Ðµ Ð²Ñ‹Ñ€Ð°Ð²Ð½Ð¸Ð²Ð°Ð½Ð¸Ðµ Ñ‡ÐµÐºÐ±Ð¾ÐºÑÐ¾Ð² Ð¸ Ñ€Ð°Ð´Ð¸Ð¾Ð±Ð°Ñ‚Ð¾Ð½Ð¾Ð² Ð¾Ñ‚Ð½Ð¾ÑÐ¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ð¼ÐµÑ‚Ð¾Ðº */
+	vertical-align: bottom;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+nav ul {
+	 list-style:none;
+}
+/* --------------- /reset.css --------------- */
+
+/* --------------- Ð±Ð°Ð·Ð¾Ð²Ñ‹Ðµ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ ---------*/
+body {
+	line-height: 1;
+	background:#fff;
+	text-align: left;
+	font: 1em RobotoRegular; /* Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÐ¼ Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ñ‹Ðµ ÑˆÑ€Ð¸Ñ„Ñ‚Ð¾Ð²Ñ‹Ðµ CSS ÑÑ‚ÐµÐºÐ¸ */
+	color:#333;
+}
+input, select, button, textarea {
+	font-family: plumbregular; /* Ñ‡Ñ‚Ð¾Ð±Ñ‹ ÑˆÑ€Ð¸Ñ„Ñ‚ Ð±Ñ‹Ð» Ñ‚Ð°ÐºÐ¾Ð¹ Ð¶Ðµ ÐºÐ°Ðº Ð¸ Ð²ÐµÐ·Ð´Ðµ */
+}
+label, input[type="button"], input[type="submit"], button {
+	cursor: pointer; /* ÐºÑƒÑ€ÑÐ¾Ñ€ Ð² Ð²Ð¸Ð´Ðµ Ñ€ÑƒÐºÐ¸ Ð´Ð»Ñ Ð²ÑÐµÑ… ÐºÐ»Ð¸ÐºÐ°Ð±ÐµÐ»ÑŒÐ½Ñ‹Ñ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ñ„Ð¾Ñ€Ð¼ */
+}
+a { /* Ð¿Ð¾Ñ€ÑÐ´Ð¾Ðº Ð¿Ñ€Ð°Ð²Ð¸Ð» Ð´Ð»Ñ ÑÑÑ‹Ð»Ð¾Ðº Ð¸Ð¼ÐµÐµÑ‚ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ */
+	color: #4783d5;
+	text-decoration: underline;
+}
+a:hover {
+	color: #4783d5;
+	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight: normal; font-family:RobotoCondensed;
+}
+img{
+	max-width:100%;
+}
+.clr, .clearing{
+	clear:both;
+}
+.clrl{
+	clear:left;
+}
+.clrr{
+	clear:right;
+}
+.clearfix:before, .clearfix:after {
+content: "";
+display: table;
+}
+.clearfix:after {
+clear: both;
+}
+.clearfix {
+zoom: 1; /* ie 6/7 */
+}
+.ali-center{
+	text-align:center;
+}
+.ali-center img{
+	margin:0 10px;
+}
+/* --------------- /Ð±Ð°Ð·Ð¾Ð²Ñ‹Ðµ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ ---------*/
+
+.allwidth{
+	width:100%;
+}
+.widthcenter{
+	max-width:900px; margin:0 auto; padding:0 20px;
+}
+	.logoSoc{
+		background:#fff; padding:20px 0 15px 0;
+	}
+	.logo-main{
+		float:left;
+	}
+	.socmain{
+		float:right;
+	}
+	.socmain p{
+		float:left; font-size:1em; font-family:RobotoCondensed; text-transform:uppercase; color:#adadad; margin:5px 40px 0 0;
+	}
+	.socmain ul{
+		float:right; list-style:none; margin:0;
+	}
+	.socmain ul li{
+		float:left; margin-left:10px; background:none; padding:0; margin-top:0
+	}
+	.soc1{
+		background-position:0 0;
+	}
+	.soc1:hover{
+		background-position:0 -30px;
+	}
+	.soc2{
+		background-position:-30px 0;
+	}
+	.soc2:hover{
+		background-position:-30px -30px;
+	}
+	.soc3{
+		background-position:-60px 0;
+	}
+	.soc3:hover{
+		background-position:-60px -30px;
+	}
+	.soc4{
+		background-position:-90px 0;
+	}
+	.soc4:hover{
+		background-position:-90px -30px;
+	}
+	.socmain ul li a{
+		display:block; width:30px; height:30px; background-image: url(images/soc.jpg); background-repeat:no-repeat;
+	}
+
+.mission{
+	background:#1a344c; color:#fff; font-size:0.875em; padding:20px 0 5px 0;
+}
+	.mission dt{
+		float:left;
+	}
+	.mission dd{
+		padding-left:120px; margin-bottom:10px;
+	}
+	
+.how-create {
+    background: #fff none repeat scroll 0 0;
+    padding: 30px 0;
+}
+.how-create h1 {
+    font-size: 2.7em;
+    margin-bottom: 20px;
+}
+.how-create h2 {
+	font-size:2em; margin-bottom:20px; color:#2b70b7; text-align:center;
+}
+.how-create p {
+    margin-bottom: 20px;
+}
+
+.colorred{
+	color:#ea2360;
+}
+
+.leftF {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+.bold {
+    font-weight: bold;
+}
+.AK {
+    color: #1c488b;
+    float: right;
+    font-style: italic;
+    margin-left: 50px;
+    text-align: center;
+}
+p#spec2 {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.avtor {
+    background: #f7eed9 url("images/corner.png") no-repeat scroll right top;
+    margin-top: 20px;
+    overflow: hidden;
+    padding: 5px 20px 20px 0;
+}
+
+.right2 {
+    color: #93835f;
+    float: left;
+    font-weight: bold;
+    margin-right: 30px;
+    text-align: center;
+}
+.avtor .avtor2 {
+    margin-left: 240px;
+}
+
+section {
+    margin: 0 auto;
+    width: 880px;
+    padding-bottom: 20px;
+}
+.speak > h3 {
+    color: #2c425a;
+    font-family: georgia,serif;
+    font-size: 27px;
+    font-style: italic;
+	text-align:center;
+	margin:20px 0;
+}
+.speak {
+    background:#fff url("images/speak.png") no-repeat scroll right bottom;
+    border: 1px solid #8cbdd9;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.speak  > h2{
+	text-align:left; font-size: 20px; padding:0 0 10px 0;
+}
+.speak > p {
+    font-size: 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.img_left {
+    float: left;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.yellow, .yellowB {
+    background: #fde866;
+    border-radius: 2px;
+    padding: 0;
+}
+.bold {
+	font-weight: bold;
+}
+.imgico{
+	vertical-align:middle;
+}
+
+.post{
+	text-align:center;
+}
+.post img{
+	margin:0 10px; border:1px solid #CCC;
+}
+.on{
+    color: #009f80;
+    font-size: 1.275em;
+    font-style: italic;
+    font-weight: bold;
+	margin-top:50px;
+}
+.lager{
+	font-size:1.1em;
+}
+
+.avtor h3 {
+    color: #0e5c77;
+    font-family: georgia,serif;
+    font-size: 2em;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.avtor2 li {
+    background: rgba(0, 0, 0, 0) url("images/bul.png") no-repeat scroll 0 3px;
+    font-family: roboto condensed,arial;
+    margin-top: 0;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+ul {
+    list-style: outside none none;
+    margin: 20px 0;
+    padding: 0;
+}
+ul li {
+    background: rgba(0, 0, 0, 0) url("images/bul.png") no-repeat scroll 0 6px;
+    margin-top: 15px;
+    padding-left: 40px;
+}
+.aboutUs{
+	margin-bottom:30px;
+}
+
+.social-comments {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.vk-comments {
+    float: left;
+}
+.facebook-comments {
+    float: right;
+}
+
+.pokaz{
+	text-align:right!important; font-style:italic; font-size:1.75em!important;
+}
+
+.lager2{
+	font-size:1.3em;
+}
